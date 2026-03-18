@@ -1,0 +1,22 @@
+{
+  "name": "@civil-labs/civil-api-js",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Protobuf and ConnectRPC client handlers for Civil API",
+  "keywords": ["javascript", "typescript", "ecmascript", "esm", "connectrpc", "protobuf"],
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.11.0"
+  },
+  "peerDependencies": {
+    "@connectrpc/connect": "^2.0.0",
+    "@connectrpc/connect-web": "^2.0.0"
+  }
+}
