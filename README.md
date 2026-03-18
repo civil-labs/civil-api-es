@@ -18,11 +18,10 @@ Here is a basic example of how to set up the transport and make an API call from
 import { createClient } from "@connectrpc/connect";
 import { createConnectTransport } from "@connectrpc/connect-web";
 
-// 1. Import your service and request messages from the SDK
+// 1. Import the service and request messages from the SDK
 import { ParcelService, GetParcelRequest } from "@civil-labs/civil-api-js";
 
 // 2. Configure the network transport 
-// (Point this to your actual backend server URL)
 const transport = createConnectTransport({
   baseUrl: "<target jurisdiction's endpoint>",
 });
@@ -72,12 +71,60 @@ const authInterceptor: Interceptor = (next) => async (req) => {
   return await next(req); // Continue the request
 };
 
-// 3. Apply the interceptor to your transport
+// 3. Apply the interceptor to the transport
 const transport = createConnectTransport({
   baseUrl: "<target jurisdiction's endpoint>",
   interceptors: [authInterceptor], // <-- Add it here
 });
 
 // 4. Create your client as usual
+const client = createClient(ParcelService, transport);
+```
+
+### Handling 401 Unauthorized Errors
+If the OIDC token expires and the backend rejects the request, the server will return a specific Connect error code: Code.Unauthenticated. This can be caughts globally to trigger a redirect to the identity provider's login page or kick off a silent token refresh.
+
+```typescript
+import { createClient, ConnectError, Code } from "@connectrpc/connect";
+import type { Interceptor } from "@connectrpc/connect";
+import { createConnectTransport } from "@connectrpc/connect-web";
+import { ParcelService } from "@civil-labs/civil-api-js";
+
+// 1. Create the Response Interceptor
+const errorHandlingInterceptor: Interceptor = (next) => async (req) => {
+  try {
+    // Await the response from the server
+    return await next(req);
+  } catch (err) {
+    // Check if the error is a recognized ConnectRPC error
+    if (err instanceof ConnectError) {
+      if (err.code === Code.Unauthenticated) {
+        console.warn("Session expired or invalid token. Triggering logout...");
+        
+        // TODO: Add your global logout or refresh logic here
+        // Example: window.location.href = '/login';
+        // Example: await authProvider.refreshToken();
+      }
+      
+      if (err.code === Code.PermissionDenied) {
+        console.warn("User does not have access to this resource.");
+      }
+    }
+    
+    // Always re-throw the error so the specific component that made 
+    // the API call can still catch it and show a local error message
+    throw err;
+  }
+};
+
+// 2. Add both interceptors to the transport array
+const transport = createConnectTransport({
+  baseUrl: "<target jurisdiction's endpoint>",
+  interceptors: [
+    authInterceptor,          // Attaches the token
+    errorHandlingInterceptor  // Catches the errors
+  ],
+});
+
 const client = createClient(ParcelService, transport);
 ```
