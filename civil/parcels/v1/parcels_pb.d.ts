@@ -69,9 +69,9 @@ export declare const GetParcelRequestSchema: GenMessage<GetParcelRequest>;
  */
 export declare type GetParcelResponse = Message<"civil.parcels.v1.GetParcelResponse"> & {
   /**
-   * @generated from field: google.protobuf.Struct parcel_details = 1;
+   * @generated from field: google.protobuf.Struct parcel_attributes = 1;
    */
-  parcelDetails?: JsonObject;
+  parcelAttributes?: JsonObject;
 };
 
 /**
@@ -118,6 +118,43 @@ export declare type GetParcelAttributeResponse = Message<"civil.parcels.v1.GetPa
 export declare const GetParcelAttributeResponseSchema: GenMessage<GetParcelAttributeResponse>;
 
 /**
+ * @generated from message civil.parcels.v1.GetParcelAttributesRequest
+ */
+export declare type GetParcelAttributesRequest = Message<"civil.parcels.v1.GetParcelAttributesRequest"> & {
+  /**
+   * @generated from field: string parcel_id = 1;
+   */
+  parcelId: string;
+
+  /**
+   * @generated from field: repeated string attribute_names = 2;
+   */
+  attributeNames: string[];
+};
+
+/**
+ * Describes the message civil.parcels.v1.GetParcelAttributesRequest.
+ * Use `create(GetParcelAttributesRequestSchema)` to create a new message.
+ */
+export declare const GetParcelAttributesRequestSchema: GenMessage<GetParcelAttributesRequest>;
+
+/**
+ * @generated from message civil.parcels.v1.GetParcelAttributesResponse
+ */
+export declare type GetParcelAttributesResponse = Message<"civil.parcels.v1.GetParcelAttributesResponse"> & {
+  /**
+   * @generated from field: google.protobuf.Struct parcel_attributes = 1;
+   */
+  parcelAttributes?: JsonObject;
+};
+
+/**
+ * Describes the message civil.parcels.v1.GetParcelAttributesResponse.
+ * Use `create(GetParcelAttributesResponseSchema)` to create a new message.
+ */
+export declare const GetParcelAttributesResponseSchema: GenMessage<GetParcelAttributesResponse>;
+
+/**
  * @generated from service civil.parcels.v1.ParcelService
  */
 export declare const ParcelService: GenService<{
@@ -132,7 +169,7 @@ export declare const ParcelService: GenService<{
     output: typeof UpdateParcelAttributeResponseSchema;
   },
   /**
-   * Retrieves all details about a parcel in a JSON object.
+   * Retrieves all a specified parcel's attributes as an object.
    *
    * @generated from rpc civil.parcels.v1.ParcelService.GetParcel
    */
@@ -150,6 +187,16 @@ export declare const ParcelService: GenService<{
     methodKind: "unary";
     input: typeof GetParcelAttributeRequestSchema;
     output: typeof GetParcelAttributeResponseSchema;
+  },
+  /**
+   * Retrieves specificied attributes about a parcel as an object.
+   *
+   * @generated from rpc civil.parcels.v1.ParcelService.GetParcelAttributes
+   */
+  getParcelAttributes: {
+    methodKind: "unary";
+    input: typeof GetParcelAttributesRequestSchema;
+    output: typeof GetParcelAttributesResponseSchema;
   },
 }>;
 
