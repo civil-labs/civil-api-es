@@ -11,9 +11,9 @@ import type { JsonObject, Message } from "@bufbuild/protobuf";
 export declare const file_civil_parcels_v1_parcels: GenFile;
 
 /**
- * @generated from message civil.parcels.v1.UpdateParcelAttributeRequest
+ * @generated from message civil.parcels.v1.UpdateParcelsAttributeRequest
  */
-export declare type UpdateParcelAttributeRequest = Message<"civil.parcels.v1.UpdateParcelAttributeRequest"> & {
+export declare type UpdateParcelsAttributeRequest = Message<"civil.parcels.v1.UpdateParcelsAttributeRequest"> & {
   /**
    * @generated from field: repeated string parcel_ids = 1;
    */
@@ -31,22 +31,22 @@ export declare type UpdateParcelAttributeRequest = Message<"civil.parcels.v1.Upd
 };
 
 /**
- * Describes the message civil.parcels.v1.UpdateParcelAttributeRequest.
- * Use `create(UpdateParcelAttributeRequestSchema)` to create a new message.
+ * Describes the message civil.parcels.v1.UpdateParcelsAttributeRequest.
+ * Use `create(UpdateParcelsAttributeRequestSchema)` to create a new message.
  */
-export declare const UpdateParcelAttributeRequestSchema: GenMessage<UpdateParcelAttributeRequest>;
+export declare const UpdateParcelsAttributeRequestSchema: GenMessage<UpdateParcelsAttributeRequest>;
 
 /**
- * @generated from message civil.parcels.v1.UpdateParcelAttributeResponse
+ * @generated from message civil.parcels.v1.UpdateParcelsAttributeResponse
  */
-export declare type UpdateParcelAttributeResponse = Message<"civil.parcels.v1.UpdateParcelAttributeResponse"> & {
+export declare type UpdateParcelsAttributeResponse = Message<"civil.parcels.v1.UpdateParcelsAttributeResponse"> & {
 };
 
 /**
- * Describes the message civil.parcels.v1.UpdateParcelAttributeResponse.
- * Use `create(UpdateParcelAttributeResponseSchema)` to create a new message.
+ * Describes the message civil.parcels.v1.UpdateParcelsAttributeResponse.
+ * Use `create(UpdateParcelsAttributeResponseSchema)` to create a new message.
  */
-export declare const UpdateParcelAttributeResponseSchema: GenMessage<UpdateParcelAttributeResponse>;
+export declare const UpdateParcelsAttributeResponseSchema: GenMessage<UpdateParcelsAttributeResponse>;
 
 /**
  * @generated from message civil.parcels.v1.GetParcelRequest
@@ -161,12 +161,12 @@ export declare const ParcelsService: GenService<{
   /**
    * Updates a specified attribute for one or more parcels, identified by their parcel IDs.
    *
-   * @generated from rpc civil.parcels.v1.ParcelsService.UpdateParcelAttribute
+   * @generated from rpc civil.parcels.v1.ParcelsService.UpdateParcelsAttribute
    */
-  updateParcelAttribute: {
+  updateParcelsAttribute: {
     methodKind: "unary";
-    input: typeof UpdateParcelAttributeRequestSchema;
-    output: typeof UpdateParcelAttributeResponseSchema;
+    input: typeof UpdateParcelsAttributeRequestSchema;
+    output: typeof UpdateParcelsAttributeResponseSchema;
   },
   /**
    * Retrieves all a specified parcel's attributes as an object.
