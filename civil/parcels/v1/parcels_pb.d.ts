@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
-import type { Message } from "@bufbuild/protobuf";
+import type { JsonObject, Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file civil/parcels/v1/parcels.proto.
@@ -49,6 +49,75 @@ export declare type UpdateParcelAttributeResponse = Message<"civil.parcels.v1.Up
 export declare const UpdateParcelAttributeResponseSchema: GenMessage<UpdateParcelAttributeResponse>;
 
 /**
+ * @generated from message civil.parcels.v1.GetParcelRequest
+ */
+export declare type GetParcelRequest = Message<"civil.parcels.v1.GetParcelRequest"> & {
+  /**
+   * @generated from field: string parcel_id = 1;
+   */
+  parcelId: string;
+};
+
+/**
+ * Describes the message civil.parcels.v1.GetParcelRequest.
+ * Use `create(GetParcelRequestSchema)` to create a new message.
+ */
+export declare const GetParcelRequestSchema: GenMessage<GetParcelRequest>;
+
+/**
+ * @generated from message civil.parcels.v1.GetParcelResponse
+ */
+export declare type GetParcelResponse = Message<"civil.parcels.v1.GetParcelResponse"> & {
+  /**
+   * @generated from field: google.protobuf.Struct parcel_details = 1;
+   */
+  parcelDetails?: JsonObject;
+};
+
+/**
+ * Describes the message civil.parcels.v1.GetParcelResponse.
+ * Use `create(GetParcelResponseSchema)` to create a new message.
+ */
+export declare const GetParcelResponseSchema: GenMessage<GetParcelResponse>;
+
+/**
+ * @generated from message civil.parcels.v1.GetParcelAttributeRequest
+ */
+export declare type GetParcelAttributeRequest = Message<"civil.parcels.v1.GetParcelAttributeRequest"> & {
+  /**
+   * @generated from field: string parcel_id = 1;
+   */
+  parcelId: string;
+
+  /**
+   * @generated from field: string attribute_name = 2;
+   */
+  attributeName: string;
+};
+
+/**
+ * Describes the message civil.parcels.v1.GetParcelAttributeRequest.
+ * Use `create(GetParcelAttributeRequestSchema)` to create a new message.
+ */
+export declare const GetParcelAttributeRequestSchema: GenMessage<GetParcelAttributeRequest>;
+
+/**
+ * @generated from message civil.parcels.v1.GetParcelAttributeResponse
+ */
+export declare type GetParcelAttributeResponse = Message<"civil.parcels.v1.GetParcelAttributeResponse"> & {
+  /**
+   * @generated from field: string attribute_value = 3;
+   */
+  attributeValue: string;
+};
+
+/**
+ * Describes the message civil.parcels.v1.GetParcelAttributeResponse.
+ * Use `create(GetParcelAttributeResponseSchema)` to create a new message.
+ */
+export declare const GetParcelAttributeResponseSchema: GenMessage<GetParcelAttributeResponse>;
+
+/**
  * @generated from service civil.parcels.v1.ParcelService
  */
 export declare const ParcelService: GenService<{
@@ -61,6 +130,22 @@ export declare const ParcelService: GenService<{
     methodKind: "unary";
     input: typeof UpdateParcelAttributeRequestSchema;
     output: typeof UpdateParcelAttributeResponseSchema;
+  },
+  /**
+   * @generated from rpc civil.parcels.v1.ParcelService.GetParcel
+   */
+  getParcel: {
+    methodKind: "unary";
+    input: typeof GetParcelRequestSchema;
+    output: typeof GetParcelResponseSchema;
+  },
+  /**
+   * @generated from rpc civil.parcels.v1.ParcelService.GetParcelAttribute
+   */
+  getParcelAttribute: {
+    methodKind: "unary";
+    input: typeof GetParcelAttributeRequestSchema;
+    output: typeof GetParcelAttributeResponseSchema;
   },
 }>;
 

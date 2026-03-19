@@ -5,12 +5,13 @@
 import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../../buf/validate/validate_pb";
 import { file_gnostic_openapi_v3_annotations } from "../../../gnostic/openapi/v3/annotations_pb";
+import { file_google_protobuf_struct } from "@bufbuild/protobuf/wkt";
 
 /**
  * Describes the file civil/parcels/v1/parcels.proto.
  */
 export const file_civil_parcels_v1_parcels = /*@__PURE__*/
-  fileDesc("Ch5jaXZpbC9wYXJjZWxzL3YxL3BhcmNlbHMucHJvdG8SEGNpdmlsLnBhcmNlbHMudjEikQEKHFVwZGF0ZVBhcmNlbEF0dHJpYnV0ZVJlcXVlc3QSKAoKcGFyY2VsX2lkcxgBIAMoCUIUukgRkgEOCAEQ6AciB3IFEAEYgAISIgoOYXR0cmlidXRlX25hbWUYAiABKAlCCrpIB3IFEAEYgAISIwoPYXR0cmlidXRlX3ZhbHVlGAMgASgJQgq6SAdyBRABGIACIh8KHVVwZGF0ZVBhcmNlbEF0dHJpYnV0ZVJlc3BvbnNlMosBCg1QYXJjZWxTZXJ2aWNlEnoKFVVwZGF0ZVBhcmNlbEF0dHJpYnV0ZRIuLmNpdmlsLnBhcmNlbHMudjEuVXBkYXRlUGFyY2VsQXR0cmlidXRlUmVxdWVzdBovLmNpdmlsLnBhcmNlbHMudjEuVXBkYXRlUGFyY2VsQXR0cmlidXRlUmVzcG9uc2UiAEKzAwoUY29tLmNpdmlsLnBhcmNlbHMudjFCDFBhcmNlbHNQcm90b1ABWj1naXRodWIuY29tL2NpdmlsLWxhYnMvY2l2aWwtYXBpLWdvL2NpdmlsL3BhcmNlbHMvdjE7cGFyY2Vsc3YxogIDQ1BYqgIQQ2l2aWwuUGFyY2Vscy5WMcoCEENpdmlsXFBhcmNlbHNcVjHiAhxDaXZpbFxQYXJjZWxzXFYxXEdQQk1ldGFkYXRh6gISQ2l2aWw6OlBhcmNlbHM6OlYxukfqARKfAQoJQ2l2aWwgQVBJEooBQVBJIGRlc2NyaXB0aW9uIGZvciB0aGUgQ2l2aWwgcGxhdGZvcm0uIEF1dGggdG9rZW4gY2FuIGJlIHJldHJpZXZlZCBieSBwcmVmaXhpbmcgImF1dGgtIiB0byB0aGUgYmVnaW5uaW5nIG9mIHlvdXIganVyaXNkaWN0aW9uJ3MgZW5kcG9pbnQuMgUwLjAuMRodChtodHRwczovL2xlZXBhLmNpdmlsbGFicy5hcHAqJzolCiMKCkJlYXJlckF1dGgSFQoTCgRodHRwKgZiZWFyZXIyA0pXVGIGcHJvdG8z", [file_buf_validate_validate, file_gnostic_openapi_v3_annotations]);
+  fileDesc("Ch5jaXZpbC9wYXJjZWxzL3YxL3BhcmNlbHMucHJvdG8SEGNpdmlsLnBhcmNlbHMudjEikQEKHFVwZGF0ZVBhcmNlbEF0dHJpYnV0ZVJlcXVlc3QSKAoKcGFyY2VsX2lkcxgBIAMoCUIUukgRkgEOCAEQ6AciB3IFEAEYgAISIgoOYXR0cmlidXRlX25hbWUYAiABKAlCCrpIB3IFEAEYgAISIwoPYXR0cmlidXRlX3ZhbHVlGAMgASgJQgq6SAdyBRABGIACIh8KHVVwZGF0ZVBhcmNlbEF0dHJpYnV0ZVJlc3BvbnNlIjEKEEdldFBhcmNlbFJlcXVlc3QSHQoJcGFyY2VsX2lkGAEgASgJQgq6SAdyBRABGIACIkQKEUdldFBhcmNlbFJlc3BvbnNlEi8KDnBhcmNlbF9kZXRhaWxzGAEgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdCJeChlHZXRQYXJjZWxBdHRyaWJ1dGVSZXF1ZXN0Eh0KCXBhcmNlbF9pZBgBIAEoCUIKukgHcgUQARiAAhIiCg5hdHRyaWJ1dGVfbmFtZRgCIAEoCUIKukgHcgUQARiAAiJBChpHZXRQYXJjZWxBdHRyaWJ1dGVSZXNwb25zZRIjCg9hdHRyaWJ1dGVfdmFsdWUYAyABKAlCCrpIB3IFEAEYgAIy1gIKDVBhcmNlbFNlcnZpY2USegoVVXBkYXRlUGFyY2VsQXR0cmlidXRlEi4uY2l2aWwucGFyY2Vscy52MS5VcGRhdGVQYXJjZWxBdHRyaWJ1dGVSZXF1ZXN0Gi8uY2l2aWwucGFyY2Vscy52MS5VcGRhdGVQYXJjZWxBdHRyaWJ1dGVSZXNwb25zZSIAElYKCUdldFBhcmNlbBIiLmNpdmlsLnBhcmNlbHMudjEuR2V0UGFyY2VsUmVxdWVzdBojLmNpdmlsLnBhcmNlbHMudjEuR2V0UGFyY2VsUmVzcG9uc2UiABJxChJHZXRQYXJjZWxBdHRyaWJ1dGUSKy5jaXZpbC5wYXJjZWxzLnYxLkdldFBhcmNlbEF0dHJpYnV0ZVJlcXVlc3QaLC5jaXZpbC5wYXJjZWxzLnYxLkdldFBhcmNlbEF0dHJpYnV0ZVJlc3BvbnNlIgBCswMKFGNvbS5jaXZpbC5wYXJjZWxzLnYxQgxQYXJjZWxzUHJvdG9QAVo9Z2l0aHViLmNvbS9jaXZpbC1sYWJzL2NpdmlsLWFwaS1nby9jaXZpbC9wYXJjZWxzL3YxO3BhcmNlbHN2MaICA0NQWKoCEENpdmlsLlBhcmNlbHMuVjHKAhBDaXZpbFxQYXJjZWxzXFYx4gIcQ2l2aWxcUGFyY2Vsc1xWMVxHUEJNZXRhZGF0YeoCEkNpdmlsOjpQYXJjZWxzOjpWMbpH6gESnwEKCUNpdmlsIEFQSRKKAUFQSSBkZXNjcmlwdGlvbiBmb3IgdGhlIENpdmlsIHBsYXRmb3JtLiBBdXRoIHRva2VuIGNhbiBiZSByZXRyaWV2ZWQgYnkgcHJlZml4aW5nICJhdXRoLSIgdG8gdGhlIGJlZ2lubmluZyBvZiB5b3VyIGp1cmlzZGljdGlvbidzIGVuZHBvaW50LjIFMC4wLjEaHQobaHR0cHM6Ly9sZWVwYS5jaXZpbGxhYnMuYXBwKic6JQojCgpCZWFyZXJBdXRoEhUKEwoEaHR0cCoGYmVhcmVyMgNKV1RiBnByb3RvMw", [file_buf_validate_validate, file_gnostic_openapi_v3_annotations, file_google_protobuf_struct]);
 
 /**
  * Describes the message civil.parcels.v1.UpdateParcelAttributeRequest.
@@ -25,6 +26,34 @@ export const UpdateParcelAttributeRequestSchema = /*@__PURE__*/
  */
 export const UpdateParcelAttributeResponseSchema = /*@__PURE__*/
   messageDesc(file_civil_parcels_v1_parcels, 1);
+
+/**
+ * Describes the message civil.parcels.v1.GetParcelRequest.
+ * Use `create(GetParcelRequestSchema)` to create a new message.
+ */
+export const GetParcelRequestSchema = /*@__PURE__*/
+  messageDesc(file_civil_parcels_v1_parcels, 2);
+
+/**
+ * Describes the message civil.parcels.v1.GetParcelResponse.
+ * Use `create(GetParcelResponseSchema)` to create a new message.
+ */
+export const GetParcelResponseSchema = /*@__PURE__*/
+  messageDesc(file_civil_parcels_v1_parcels, 3);
+
+/**
+ * Describes the message civil.parcels.v1.GetParcelAttributeRequest.
+ * Use `create(GetParcelAttributeRequestSchema)` to create a new message.
+ */
+export const GetParcelAttributeRequestSchema = /*@__PURE__*/
+  messageDesc(file_civil_parcels_v1_parcels, 4);
+
+/**
+ * Describes the message civil.parcels.v1.GetParcelAttributeResponse.
+ * Use `create(GetParcelAttributeResponseSchema)` to create a new message.
+ */
+export const GetParcelAttributeResponseSchema = /*@__PURE__*/
+  messageDesc(file_civil_parcels_v1_parcels, 5);
 
 /**
  * @generated from service civil.parcels.v1.ParcelService
