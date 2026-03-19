@@ -155,13 +155,13 @@ export declare type GetParcelAttributesResponse = Message<"civil.parcels.v1.GetP
 export declare const GetParcelAttributesResponseSchema: GenMessage<GetParcelAttributesResponse>;
 
 /**
- * @generated from service civil.parcels.v1.ParcelService
+ * @generated from service civil.parcels.v1.ParcelsService
  */
-export declare const ParcelService: GenService<{
+export declare const ParcelsService: GenService<{
   /**
    * Updates a specified attribute for one or more parcels, identified by their parcel IDs.
    *
-   * @generated from rpc civil.parcels.v1.ParcelService.UpdateParcelAttribute
+   * @generated from rpc civil.parcels.v1.ParcelsService.UpdateParcelAttribute
    */
   updateParcelAttribute: {
     methodKind: "unary";
@@ -171,7 +171,7 @@ export declare const ParcelService: GenService<{
   /**
    * Retrieves all a specified parcel's attributes as an object.
    *
-   * @generated from rpc civil.parcels.v1.ParcelService.GetParcel
+   * @generated from rpc civil.parcels.v1.ParcelsService.GetParcel
    */
   getParcel: {
     methodKind: "unary";
@@ -181,7 +181,7 @@ export declare const ParcelService: GenService<{
   /**
    * Retrieves a specified attribute value for a given parcel.
    *
-   * @generated from rpc civil.parcels.v1.ParcelService.GetParcelAttribute
+   * @generated from rpc civil.parcels.v1.ParcelsService.GetParcelAttribute
    */
   getParcelAttribute: {
     methodKind: "unary";
@@ -191,7 +191,7 @@ export declare const ParcelService: GenService<{
   /**
    * Retrieves specificied attributes about a parcel as an object.
    *
-   * @generated from rpc civil.parcels.v1.ParcelService.GetParcelAttributes
+   * @generated from rpc civil.parcels.v1.ParcelsService.GetParcelAttributes
    */
   getParcelAttributes: {
     methodKind: "unary";
