@@ -155,6 +155,58 @@ export declare type GetParcelAttributesResponse = Message<"civil.parcels.v1.GetP
 export declare const GetParcelAttributesResponseSchema: GenMessage<GetParcelAttributesResponse>;
 
 /**
+ * @generated from message civil.parcels.v1.GetParcelsStatsRequest
+ */
+export declare type GetParcelsStatsRequest = Message<"civil.parcels.v1.GetParcelsStatsRequest"> & {
+  /**
+   * @generated from field: repeated string parcel_ids = 1;
+   */
+  parcelIds: string[];
+
+  /**
+   * @generated from field: string attribute_name = 2;
+   */
+  attributeName: string;
+
+  /**
+   * @generated from field: bool return_values = 3;
+   */
+  returnValues: boolean;
+};
+
+/**
+ * Describes the message civil.parcels.v1.GetParcelsStatsRequest.
+ * Use `create(GetParcelsStatsRequestSchema)` to create a new message.
+ */
+export declare const GetParcelsStatsRequestSchema: GenMessage<GetParcelsStatsRequest>;
+
+/**
+ * @generated from message civil.parcels.v1.GetParcelsStatsResponse
+ */
+export declare type GetParcelsStatsResponse = Message<"civil.parcels.v1.GetParcelsStatsResponse"> & {
+  /**
+   * @generated from field: float mean = 1;
+   */
+  mean: number;
+
+  /**
+   * @generated from field: float median = 2;
+   */
+  median: number;
+
+  /**
+   * @generated from field: float mode = 3;
+   */
+  mode: number;
+};
+
+/**
+ * Describes the message civil.parcels.v1.GetParcelsStatsResponse.
+ * Use `create(GetParcelsStatsResponseSchema)` to create a new message.
+ */
+export declare const GetParcelsStatsResponseSchema: GenMessage<GetParcelsStatsResponse>;
+
+/**
  * @generated from service civil.parcels.v1.ParcelsService
  */
 export declare const ParcelsService: GenService<{
@@ -197,6 +249,16 @@ export declare const ParcelsService: GenService<{
     methodKind: "unary";
     input: typeof GetParcelAttributesRequestSchema;
     output: typeof GetParcelAttributesResponseSchema;
+  },
+  /**
+   * Retrieves a set of summary statistics about the specified attribute for a specified list of parcels. Optionally returns the values as well
+   *
+   * @generated from rpc civil.parcels.v1.ParcelsService.GetParcelsStats
+   */
+  getParcelsStats: {
+    methodKind: "unary";
+    input: typeof GetParcelsStatsRequestSchema;
+    output: typeof GetParcelsStatsResponseSchema;
   },
 }>;
 
