@@ -155,9 +155,9 @@ export declare type GetParcelAttributesResponse = Message<"civil.parcels.v1.GetP
 export declare const GetParcelAttributesResponseSchema: GenMessage<GetParcelAttributesResponse>;
 
 /**
- * @generated from message civil.parcels.v1.GetParcelsStatsRequest
+ * @generated from message civil.parcels.v1.GetNumericalStatsRequest
  */
-export declare type GetParcelsStatsRequest = Message<"civil.parcels.v1.GetParcelsStatsRequest"> & {
+export declare type GetNumericalStatsRequest = Message<"civil.parcels.v1.GetNumericalStatsRequest"> & {
   /**
    * @generated from field: repeated string parcel_ids = 1;
    */
@@ -175,36 +175,153 @@ export declare type GetParcelsStatsRequest = Message<"civil.parcels.v1.GetParcel
 };
 
 /**
- * Describes the message civil.parcels.v1.GetParcelsStatsRequest.
- * Use `create(GetParcelsStatsRequestSchema)` to create a new message.
+ * Describes the message civil.parcels.v1.GetNumericalStatsRequest.
+ * Use `create(GetNumericalStatsRequestSchema)` to create a new message.
  */
-export declare const GetParcelsStatsRequestSchema: GenMessage<GetParcelsStatsRequest>;
+export declare const GetNumericalStatsRequestSchema: GenMessage<GetNumericalStatsRequest>;
 
 /**
- * @generated from message civil.parcels.v1.GetParcelsStatsResponse
+ * @generated from message civil.parcels.v1.GetNumericalStatsResponse
  */
-export declare type GetParcelsStatsResponse = Message<"civil.parcels.v1.GetParcelsStatsResponse"> & {
+export declare type GetNumericalStatsResponse = Message<"civil.parcels.v1.GetNumericalStatsResponse"> & {
   /**
-   * @generated from field: float mean = 1;
+   * @generated from field: float mode = 1;
+   */
+  mode: number;
+
+  /**
+   * @generated from field: float minimum = 2;
+   */
+  minimum: number;
+
+  /**
+   * @generated from field: float maximum = 3;
+   */
+  maximum: number;
+
+  /**
+   * @generated from field: float range = 4;
+   */
+  range: number;
+
+  /**
+   * @generated from field: float percentile_10 = 5;
+   */
+  percentile10: number;
+
+  /**
+   * @generated from field: float percentile_20 = 6;
+   */
+  percentile20: number;
+
+  /**
+   * @generated from field: float percentile_30 = 7;
+   */
+  percentile30: number;
+
+  /**
+   * @generated from field: float percentile_40 = 8;
+   */
+  percentile40: number;
+
+  /**
+   * @generated from field: float percentile_50 = 9;
+   */
+  percentile50: number;
+
+  /**
+   * @generated from field: float percentile_60 = 10;
+   */
+  percentile60: number;
+
+  /**
+   * @generated from field: float percentile_70 = 11;
+   */
+  percentile70: number;
+
+  /**
+   * @generated from field: float percentile_80 = 12;
+   */
+  percentile80: number;
+
+  /**
+   * @generated from field: float percentile_90 = 13;
+   */
+  percentile90: number;
+
+  /**
+   * @generated from field: float percentile_100 = 14;
+   */
+  percentile100: number;
+
+  /**
+   * @generated from field: float mean = 15;
    */
   mean: number;
 
   /**
-   * @generated from field: float median = 2;
+   * @generated from field: float standard_deviation = 16;
    */
-  median: number;
+  standardDeviation: number;
 
   /**
-   * @generated from field: float mode = 3;
+   * @generated from field: float coefficient_of_dispersion = 17;
    */
-  mode: number;
+  coefficientOfDispersion: number;
 };
 
 /**
- * Describes the message civil.parcels.v1.GetParcelsStatsResponse.
- * Use `create(GetParcelsStatsResponseSchema)` to create a new message.
+ * Describes the message civil.parcels.v1.GetNumericalStatsResponse.
+ * Use `create(GetNumericalStatsResponseSchema)` to create a new message.
  */
-export declare const GetParcelsStatsResponseSchema: GenMessage<GetParcelsStatsResponse>;
+export declare const GetNumericalStatsResponseSchema: GenMessage<GetNumericalStatsResponse>;
+
+/**
+ * @generated from message civil.parcels.v1.GetCategoricalStatsRequest
+ */
+export declare type GetCategoricalStatsRequest = Message<"civil.parcels.v1.GetCategoricalStatsRequest"> & {
+  /**
+   * @generated from field: repeated string parcel_ids = 1;
+   */
+  parcelIds: string[];
+
+  /**
+   * @generated from field: string attribute_name = 2;
+   */
+  attributeName: string;
+
+  /**
+   * @generated from field: bool return_values = 3;
+   */
+  returnValues: boolean;
+};
+
+/**
+ * Describes the message civil.parcels.v1.GetCategoricalStatsRequest.
+ * Use `create(GetCategoricalStatsRequestSchema)` to create a new message.
+ */
+export declare const GetCategoricalStatsRequestSchema: GenMessage<GetCategoricalStatsRequest>;
+
+/**
+ * @generated from message civil.parcels.v1.GetCategoricalStatsResponse
+ */
+export declare type GetCategoricalStatsResponse = Message<"civil.parcels.v1.GetCategoricalStatsResponse"> & {
+  /**
+   * @generated from field: string mode = 1;
+   */
+  mode: string;
+
+  /**
+   * @generated from field: map<string, int32> unique_values = 2;
+   */
+  uniqueValues: { [key: string]: number };
+};
+
+/**
+ * Describes the message civil.parcels.v1.GetCategoricalStatsResponse.
+ * Use `create(GetCategoricalStatsResponseSchema)` to create a new message.
+ */
+export declare const GetCategoricalStatsResponseSchema: GenMessage<GetCategoricalStatsResponse>;
 
 /**
  * @generated from service civil.parcels.v1.ParcelsService
@@ -251,14 +368,22 @@ export declare const ParcelsService: GenService<{
     output: typeof GetParcelAttributesResponseSchema;
   },
   /**
+   * @generated from rpc civil.parcels.v1.ParcelsService.GetNumericalStats
+   */
+  getNumericalStats: {
+    methodKind: "unary";
+    input: typeof GetNumericalStatsRequestSchema;
+    output: typeof GetNumericalStatsResponseSchema;
+  },
+  /**
    * Retrieves a set of summary statistics about the specified attribute for a specified list of parcels. Optionally returns the values as well
    *
-   * @generated from rpc civil.parcels.v1.ParcelsService.GetParcelsStats
+   * @generated from rpc civil.parcels.v1.ParcelsService.GetCategoricalStats
    */
-  getParcelsStats: {
+  getCategoricalStats: {
     methodKind: "unary";
-    input: typeof GetParcelsStatsRequestSchema;
-    output: typeof GetParcelsStatsResponseSchema;
+    input: typeof GetCategoricalStatsRequestSchema;
+    output: typeof GetCategoricalStatsResponseSchema;
   },
 }>;
 
