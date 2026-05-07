@@ -16,23 +16,28 @@ export declare const file_civil_public_parcels_v1_parcels: GenFile;
  */
 export declare type ParcelAffordances = Message<"civil.public.parcels.v1.ParcelAffordances"> & {
   /**
+   * @generated from field: repeated string affordance_ids = 1;
+   */
+  affordanceIds: string[];
+
+  /**
    * Maximum Floor Area Ratio (FAR)
    *
-   * @generated from field: optional double max_far = 1;
+   * @generated from field: optional double max_far = 2;
    */
   maxFar?: number;
 
   /**
    * Minimum lot size in square feet
    *
-   * @generated from field: optional double min_lot_size_sq_ft = 2;
+   * @generated from field: optional double min_lot_size_sq_ft = 3;
    */
   minLotSizeSqFt?: number;
 
   /**
    * Maximum legally permitted building height in feet
    *
-   * @generated from field: optional double max_height_ft = 3;
+   * @generated from field: optional double max_height_ft = 4;
    */
   maxHeightFt?: number;
 };
@@ -145,67 +150,57 @@ export declare type Parcel = Message<"civil.public.parcels.v1.Parcel"> & {
   landAreaSqFt: number;
 
   /**
-   * @generated from field: string land_use = 8;
+   * @generated from field: string land_use_id = 8;
    */
-  landUse: string;
+  landUseId: string;
 
   /**
-   * @generated from field: optional string land_use_code = 9;
+   * @generated from field: optional string neighborhood_id = 9;
    */
-  landUseCode?: string;
+  neighborhoodId?: string;
 
   /**
-   * @generated from field: optional string neighborhood = 10;
+   * @generated from field: optional string market_area_id = 10;
    */
-  neighborhood?: string;
+  marketAreaId?: string;
 
   /**
-   * @generated from field: optional string market_area = 11;
+   * @generated from field: repeated string zoning_ids = 11;
    */
-  marketArea?: string;
+  zoningIds: string[];
 
   /**
-   * @generated from field: repeated string zoning = 12;
-   */
-  zoning: string[];
-
-  /**
-   * @generated from field: repeated string zoning_codes = 13;
-   */
-  zoningCodes: string[];
-
-  /**
-   * @generated from field: string market_land_value = 14;
+   * @generated from field: string market_land_value = 12;
    */
   marketLandValue: string;
 
   /**
-   * @generated from field: string assessed_land_value = 15;
+   * @generated from field: string assessed_land_value = 13;
    */
   assessedLandValue: string;
 
   /**
-   * @generated from field: string market_improvement_value = 16;
+   * @generated from field: string market_improvement_value = 14;
    */
   marketImprovementValue: string;
 
   /**
-   * @generated from field: string assessed_improvement_value = 17;
+   * @generated from field: string assessed_improvement_value = 15;
    */
   assessedImprovementValue: string;
 
   /**
-   * @generated from field: civil.public.parcels.v1.ParcelAffordances affordances = 18;
+   * @generated from field: civil.public.parcels.v1.ParcelAffordances affordances = 16;
    */
   affordances?: ParcelAffordances;
 
   /**
-   * @generated from field: civil.public.parcels.v1.ParcelImprovementsSummary improvement_summary = 19;
+   * @generated from field: civil.public.parcels.v1.ParcelImprovementsSummary improvement_summary = 17;
    */
   improvementSummary?: ParcelImprovementsSummary;
 
   /**
-   * @generated from field: string properties = 20;
+   * @generated from field: string properties = 18;
    */
   properties: string;
 };
