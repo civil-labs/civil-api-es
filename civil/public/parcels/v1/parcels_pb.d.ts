@@ -58,29 +58,29 @@ export declare type ParcelImprovementsSummary = Message<"civil.public.parcels.v1
   improvementIds: string[];
 
   /**
-   * Additives: Physically impossible to be negative
+   * Physically impossible to be negative
    *
-   * @generated from field: optional double total_area_sq_ft = 2;
+   * @generated from field: double total_area_sq_ft = 2;
    */
-  totalAreaSqFt?: number;
+  totalAreaSqFt: number;
 
   /**
-   * @generated from field: optional int32 total_bathrooms = 3;
+   * @generated from field: int32 total_bathrooms = 3;
    */
-  totalBathrooms?: number;
+  totalBathrooms: number;
 
   /**
-   * @generated from field: optional int32 total_bedrooms = 4;
+   * @generated from field: int32 total_bedrooms = 4;
    */
-  totalBedrooms?: number;
+  totalBedrooms: number;
 
   /**
-   * @generated from field: optional int32 total_units = 5;
+   * @generated from field: int32 total_units = 5;
    */
-  totalUnits?: number;
+  totalUnits: number;
 
   /**
-   * Temporals: Bounded to realistic historical/future parameters
+   * Bounded to realistic historical/future parameters
    *
    * @generated from field: optional int32 oldest_year_built = 6;
    */
@@ -92,16 +92,26 @@ export declare type ParcelImprovementsSummary = Message<"civil.public.parcels.v1
   newestYearBuilt?: number;
 
   /**
-   * Qualitatives: Bounded to Civil's specific property condition ordinal scale
+   * Worst and best based on the conditions' depreciation factors
    *
-   * @generated from field: optional int32 lowest_condition_num = 8;
+   * @generated from field: optional string worst_condition_id = 8;
    */
-  lowestConditionNum?: number;
+  worstConditionId?: string;
 
   /**
-   * @generated from field: optional int32 highest_condition_num = 9;
+   * @generated from field: optional string best_condition_id = 9;
    */
-  highestConditionNum?: number;
+  bestConditionId?: string;
+
+  /**
+   * @generated from field: optional string market_improvement_value = 10;
+   */
+  marketImprovementValue?: string;
+
+  /**
+   * @generated from field: optional string assessed_improvement_value = 11;
+   */
+  assessedImprovementValue?: string;
 };
 
 /**
@@ -145,62 +155,57 @@ export declare type Parcel = Message<"civil.public.parcels.v1.Parcel"> & {
   ownerId: string;
 
   /**
-   * @generated from field: double land_area_sq_ft = 7;
-   */
-  landAreaSqFt: number;
-
-  /**
-   * @generated from field: string land_use_id = 8;
+   * @generated from field: string land_use_id = 7;
    */
   landUseId: string;
 
   /**
-   * @generated from field: optional string neighborhood_id = 9;
+   * @generated from field: optional string neighborhood_id = 8;
    */
   neighborhoodId?: string;
 
   /**
-   * @generated from field: optional string market_area_id = 10;
+   * @generated from field: optional double land_area_sq_ft = 9;
    */
-  marketAreaId?: string;
+  landAreaSqFt?: number;
 
   /**
-   * @generated from field: repeated string zoning_ids = 11;
+   * @generated from field: optional double frontage_m = 10;
+   */
+  frontageM?: number;
+
+  /**
+   * @generated from field: optional double depth_m = 11;
+   */
+  depthM?: number;
+
+  /**
+   * @generated from field: repeated string zoning_ids = 12;
    */
   zoningIds: string[];
 
   /**
-   * @generated from field: string market_land_value = 12;
+   * @generated from field: optional string market_land_value = 13;
    */
-  marketLandValue: string;
+  marketLandValue?: string;
 
   /**
-   * @generated from field: string assessed_land_value = 13;
+   * @generated from field: optional string assessed_land_value = 14;
    */
-  assessedLandValue: string;
+  assessedLandValue?: string;
 
   /**
-   * @generated from field: string market_improvement_value = 14;
-   */
-  marketImprovementValue: string;
-
-  /**
-   * @generated from field: string assessed_improvement_value = 15;
-   */
-  assessedImprovementValue: string;
-
-  /**
-   * @generated from field: civil.public.parcels.v1.ParcelAffordances affordances = 16;
+   * @generated from field: civil.public.parcels.v1.ParcelAffordances affordances = 15;
    */
   affordances?: ParcelAffordances;
 
   /**
-   * @generated from field: civil.public.parcels.v1.ParcelImprovementsSummary improvement_summary = 17;
+   * @generated from field: civil.public.parcels.v1.ParcelImprovementsSummary improvement_summary = 16;
    */
   improvementSummary?: ParcelImprovementsSummary;
 
   /**
-   * @generated from field: string properties = 18;
+   * @generated from field: string properties = 17;
    */
   properties: string;
 };
@@ -235,6 +240,16 @@ export declare type GetParcelsByIdRequest = Message<"civil.public.parcels.v1.Get
    * @generated from field: optional google.protobuf.Timestamp system_as_of = 3;
    */
   systemAsOf?: Timestamp;
+
+  /**
+   * @generated from field: optional string valuation_id = 4;
+   */
+  valuationId?: string;
+
+  /**
+   * @generated from field: optional string neighborhood_definition_id = 5;
+   */
+  neighborhoodDefinitionId?: string;
 };
 
 /**
