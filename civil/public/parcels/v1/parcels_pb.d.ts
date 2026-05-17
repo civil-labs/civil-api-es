@@ -92,24 +92,29 @@ export declare type ParcelImprovementsSummary = Message<"civil.public.parcels.v1
   newestYearBuilt?: number;
 
   /**
+   * @generated from field: optional string weighted_average_depreciation_modifier = 8;
+   */
+  weightedAverageDepreciationModifier?: string;
+
+  /**
    * Worst and best based on the conditions' depreciation factors
    *
-   * @generated from field: optional string worst_condition_id = 8;
+   * @generated from field: optional string worst_condition_id = 9;
    */
   worstConditionId?: string;
 
   /**
-   * @generated from field: optional string best_condition_id = 9;
+   * @generated from field: optional string best_condition_id = 10;
    */
   bestConditionId?: string;
 
   /**
-   * @generated from field: optional string market_improvement_value = 10;
+   * @generated from field: optional string market_improvement_value = 11;
    */
   marketImprovementValue?: string;
 
   /**
-   * @generated from field: optional string assessed_improvement_value = 11;
+   * @generated from field: optional string assessed_improvement_value = 12;
    */
   assessedImprovementValue?: string;
 };
