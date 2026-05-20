@@ -145,19 +145,19 @@ export declare type Parcel = Message<"civil.public.parcels.v1.Parcel"> & {
   addressId?: string;
 
   /**
-   * @generated from field: optional string owner_name = 4;
+   * @generated from field: optional string primary_owner_name = 4;
    */
-  ownerName?: string;
+  primaryOwnerName?: string;
 
   /**
-   * @generated from field: optional string owner_address = 5;
+   * @generated from field: optional string primary_owner_address = 5;
    */
-  ownerAddress?: string;
+  primaryOwnerAddress?: string;
 
   /**
-   * @generated from field: optional string owner_id = 6;
+   * @generated from field: repeated string party_ids = 6;
    */
-  ownerId?: string;
+  partyIds: string[];
 
   /**
    * @generated from field: optional string land_use_id = 7;
