@@ -40,6 +40,16 @@ export declare type ParcelAffordances = Message<"civil.public.parcels.v1.ParcelA
    * @generated from field: optional double max_height_ft = 4;
    */
   maxHeightFt?: number;
+
+  /**
+   * @generated from field: optional double max_dwelling_units_per_hectare = 5;
+   */
+  maxDwellingUnitsPerHectare?: number;
+
+  /**
+   * @generated from field: optional double max_lot_coverage_pct = 6;
+   */
+  maxLotCoveragePct?: number;
 };
 
 /**
