@@ -185,6 +185,53 @@ export declare type GetTileResponse = Message<"civil.public.tiles.v1.GetTileResp
 export declare const GetTileResponseSchema: GenMessage<GetTileResponse>;
 
 /**
+ * @generated from message civil.public.tiles.v1.GetParcelTilesRequest
+ */
+export declare type GetParcelTilesRequest = Message<"civil.public.tiles.v1.GetParcelTilesRequest"> & {
+  /**
+   * @generated from field: int32 z = 1;
+   */
+  z: number;
+
+  /**
+   * @generated from field: int32 x = 2;
+   */
+  x: number;
+
+  /**
+   * @generated from field: int32 y = 3;
+   */
+  y: number;
+};
+
+/**
+ * Describes the message civil.public.tiles.v1.GetParcelTilesRequest.
+ * Use `create(GetParcelTilesRequestSchema)` to create a new message.
+ */
+export declare const GetParcelTilesRequestSchema: GenMessage<GetParcelTilesRequest>;
+
+/**
+ * @generated from message civil.public.tiles.v1.GetParcelTilesResponse
+ */
+export declare type GetParcelTilesResponse = Message<"civil.public.tiles.v1.GetParcelTilesResponse"> & {
+  /**
+   * @generated from field: string content_type = 1;
+   */
+  contentType: string;
+
+  /**
+   * @generated from field: bytes data = 2;
+   */
+  data: Uint8Array;
+};
+
+/**
+ * Describes the message civil.public.tiles.v1.GetParcelTilesResponse.
+ * Use `create(GetParcelTilesResponseSchema)` to create a new message.
+ */
+export declare const GetParcelTilesResponseSchema: GenMessage<GetParcelTilesResponse>;
+
+/**
  * @generated from service civil.public.tiles.v1.TileService
  */
 export declare const TileService: GenService<{
@@ -208,6 +255,14 @@ export declare const TileService: GenService<{
     methodKind: "unary";
     input: typeof GetTileRequestSchema;
     output: typeof GetTileResponseSchema;
+  },
+  /**
+   * @generated from rpc civil.public.tiles.v1.TileService.GetParcelTiles
+   */
+  getParcelTiles: {
+    methodKind: "unary";
+    input: typeof GetParcelTilesRequestSchema;
+    output: typeof GetParcelTilesResponseSchema;
   },
 }>;
 
